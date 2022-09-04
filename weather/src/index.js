@@ -3,7 +3,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import WeatherDisplay from './WeatherDisplay'
-
+import Spinner from './Spinner'
 
 // Create class components
 class App extends React.Component { 
@@ -32,7 +32,7 @@ class App extends React.Component {
         }
         if (!this.state.lat && !this.state.errorMessage)
         {
-            return (<div>loading</div>)
+            return <Spinner/>
         }
     }
 

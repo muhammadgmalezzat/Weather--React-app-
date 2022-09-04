@@ -1,7 +1,16 @@
-//import react , react dom
+import './WeatherDisplay.css';
 import React from 'react'
 
-
+const seasocConfig = {
+    summer: {
+        text: "Lets hit the Beach",
+        iconName: "sun"
+    },
+    winter: {
+        text: "Burr, it is Chilly",
+        iconName: "sonwflake"
+    }
+}
 
 
 const getSeason = (lat, month )=> {
@@ -14,13 +23,13 @@ const getSeason = (lat, month )=> {
 
 const weatherDisplay = (props) => {
     const season = getSeason(props.lat, new Date().getMonth());
-    const text = season === 'winter' ? 'Burr, it is Chilly' : 'Lets hit the Beach';
-    const iconName = season === 'winter' ? 'sonwflake' : 'sun';
+    //estructuring text and icon from seasonconfig object 
+    const { text, iconName } = seasocConfig[season];
     return (
-        <div>
-            <i className={`${iconName} icon `}></i>
+        <div className={`weather-display ${season} `}>
+            <i className={`icon-left massive ${iconName} icon `}></i>
             <h1>{text}</h1>
-            <i className={`${iconName} icon `}></i>
+            <i className={`icon-right massive ${iconName} icon `}></i>
         </div>
     );
 };
