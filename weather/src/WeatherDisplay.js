@@ -3,11 +3,11 @@ import React from 'react'
 
 const seasocConfig = {
     summer: {
-        text: "Lets hit the Beach",
+        text: "Lets hit the Beach 🌞🥵 ",
         iconName: "sun"
     },
     winter: {
-        text: "Burr, it is Chilly",
+        text: "Burr, it is Chilly ❄️🥶",
         iconName: "sonwflake"
     }
 }
